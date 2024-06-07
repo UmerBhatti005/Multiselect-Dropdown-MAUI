@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp2"
+             x:Class="MauiApp2.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ListToStringConverter x:Key="ListToStringConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20">
+            <!--<Button 
+            Text="First" 
+            Margin="0,10" 
+            Padding="10" 
+            BackgroundColor="#3498db" 
+            TextColor="White" 
+            CornerRadius="10"
+            Clicked="BindDataOnClicked" />-->
+
+            <Frame 
+            Padding="20" 
+            BorderColor="#bdc3c7" 
+            CornerRadius="10"
+            HasShadow="True">
+                <StackLayout>
+                    <FlexLayout x:Name="SelectedItemsContainer" 
+            Direction="Row" 
+            Wrap="Wrap" 
+            AlignItems="Start" 
+            JustifyContent="Start"
+            BackgroundColor="White"
+            Margin="0,10">
+                    </FlexLayout>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSelectItemsClicked" />
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <!--<Button 
+            Text="Second" 
+            Margin="0,10" 
+            Padding="10" 
+            BackgroundColor="#2ecc71" 
+            TextColor="White" 
+            CornerRadius="10" 
+            Clicked="ShowDataOnClicked" />-->
+
+            <Grid 
+            x:Name="popupGrid" 
+            IsVisible="False" 
+            BackgroundColor="#80000000" 
+            Padding="20" 
+            VerticalOptions="CenterAndExpand">
+                <Frame 
+                BackgroundColor="White" 
+                CornerRadius="10" 
+                Padding="20" 
+                HasShadow="True">
+                    <StackLayout Spacing="10">
+                        <CollectionView ItemsSource="{Binding Items}" Margin="0,0,0,10">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal" Padding="10" Spacing="10">
+                                        <CheckBox 
+                                        IsChecked="{Binding IsSelected}" 
+                                        VerticalOptions="Center" 
+                                        Color="#3498db"/>
+                                        <Label 
+                                        Text="{Binding Name}" 
+                                        VerticalOptions="Center" 
+                                        FontSize="Medium"
+                                        TextColor="#2c3e50" />
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        <Button 
+                        Text="Done" 
+                        BackgroundColor="#e74c3c" 
+                        TextColor="White" 
+                        CornerRadius="10" 
+                        Padding="10"
+                        Clicked="OnDoneClicked"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>
