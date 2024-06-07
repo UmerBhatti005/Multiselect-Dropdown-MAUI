@@ -1,3 +1,5 @@
+This is a straightforward and customized implementation of a multiselect dropdown.
+
 ![image](https://github.com/UmerBhatti005/Multiselect-Dropdown-MAUI/assets/104451410/d50fddbf-150e-41de-ab66-dd361eb471d1)
 
 ![image](https://github.com/UmerBhatti005/Multiselect-Dropdown-MAUI/assets/104451410/2373eb07-dcf2-49df-a37b-c74358bb94c4)
